@@ -18,6 +18,10 @@ services:
       - ./public_html:/var/www/html
       - ./vendor:/var/www/vendor
       - ./config:/var/www/config
+      - ./php/logs/xdebug:/tmp/xdebug/
+      - ./php/logs/nginx:/var/log/nginx
+      - ./php/xdebug.ini:/usr/local/etc/php/conf.d/docker-php-ext-xdebug.ini
+      - ./php/error_reporting.ini:/usr/local/etc/php/conf.d/error_reporting.ini
   db:
     image: percona:5.7
     volumes:
